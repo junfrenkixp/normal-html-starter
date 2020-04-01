@@ -5,7 +5,7 @@ module.exports = () => {
             logPrefix: 'WSK',
             logFileChanges: false,
             server: [$.config.tmpPath, $.config.sourcePath],
-            startPath: '/html/',
+            startPath: '',
             logSnippet: false
         });
     });

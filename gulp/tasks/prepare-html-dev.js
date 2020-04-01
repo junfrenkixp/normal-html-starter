@@ -45,14 +45,14 @@ module.exports = () => {
       .toString();
 
     $.fs.writeFileSync(
-      $.config.tmpPath + "/" + "html/index.html",
+      $.config.tmpPath + "/" + "index.html",
       templateFile
         .replace("{{items}}", liList)
         .replace(/{{siteName}}/g, $.config.siteName)
     );
 
     return $.gulp
-      .src($.config.tmpPath + "/html/**/*.html")
+      .src($.config.tmpPath + "/*.html")
       .pipe(
         $.gulpPlugin.cheerio({
           run: jQuery => {
@@ -74,6 +74,6 @@ module.exports = () => {
           }
         })
       )
-      .pipe($.gulp.dest($.config.tmpPath + "/html/"));
+      .pipe($.gulp.dest($.config.tmpPath));
   });
 };

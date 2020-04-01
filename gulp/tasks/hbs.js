@@ -37,7 +37,7 @@ module.exports = () => {
                 path.extname = ".html"
             }))
             .pipe($.gulpPlugin.trim())
-            .pipe($.gulp.dest($.config.tmpPath + '/html'))
+            .pipe($.gulp.dest($.config.tmpPath))
             .pipe($.bs.reload({stream: true}))
     });
 };
